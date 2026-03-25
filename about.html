@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Neat & Tidy UK</title>
+  <meta name="description" content="Learn about Neat & Tidy UK - South London's trusted cleaning service. Our mission, vision, and commitment to quality.">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-blue': '#1e88e5',
+            'brand-green': '#43a047',
+            'brand-light': '#f8f9fa',
+            'brand-dark': '#212529',
+          },
+          fontFamily: {
+            'sans': ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            'display': ['Space Grotesk', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Space Grotesk', sans-serif; }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    .mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    .mobile-menu.open {
+      max-height: 400px;
+    }
+    
+    .value-card {
+      transition: transform 0.3s ease;
+    }
+    .value-card:hover {
+      transform: translateY(-10px);
+    }
+  </style>
+</head>
+<body class="bg-white text-brand-dark">
+  
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white shadow-md py-2">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center">
+        <a href="index.html" class="flex items-center space-x-2">
+          <div class="w-10 h-10 bg-brand-blue rounded-lg flex items-center justify-center">
+            <span class="text-white font-display font-bold text-xl">N</span>
+          </div>
+          <span class="font-display font-bold text-xl text-brand-dark">
+            Neat & Tidy <span class="text-brand-green">UK</span>
+          </span>
+        </a>
+
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="nav-link font-medium text-brand-dark hover:text-brand-green transition-colors">Home</a>
+          <a href="about.html" class="nav-link font-medium text-brand-green">About</a>
+          <a href="services.html" class="nav-link font-medium text-brand-dark hover:text-brand-green transition-colors">Services</a>
+          <a href="pricing.html" class="nav-link font-medium text-brand-dark hover:text-brand-green transition-colors">Pricing</a>
+          <a href="areas.html" class="nav-link font-medium text-brand-dark hover:text-brand-green transition-colors">Areas</a>
+          <a href="contact.html" class="nav-link font-medium text-brand-dark hover:text-brand-green transition-colors">Contact</a>
+          <a href="https://wa.me/447399649615" target="_blank" rel="noopener noreferrer"
+             class="bg-brand-green text-white px-6 py-2 rounded-full font-bold flex items-center space-x-2 hover:bg-opacity-90 transition-all shadow-lg">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>Book Now</span>
+          </a>
+        </div>
+
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-brand-dark">
+          <i data-lucide="menu" class="w-7 h-7"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t border-gray-100">
+      <div class="px-4 pt-2 pb-6 space-y-1">
+        <a href="index.html" class="block px-3 py-4 text-base font-medium border-b border-gray-50 text-brand-dark hover:text-brand-green">Home</a>
+        <a href="about.html" class="block px-3 py-4 text-base font-medium border-b border-gray-50 text-brand-green">About</a>
+        <a href="services.html" class="block px-3 py-4 text-base font-medium border-b border-gray-50 text-brand-dark hover:text-brand-green">Services</a>
+        <a href="pricing.html" class="block px-3 py-4 text-base font-medium border-b border-gray-50 text-brand-dark hover:text-brand-green">Pricing</a>
+        <a href="areas.html" class="block px-3 py-4 text-base font-medium border-b border-gray-50 text-brand-dark hover:text-brand-green">Areas</a>
+        <a href="contact.html" class="block px-3 py-4 text-base font-medium border-b border-gray-50 text-brand-dark hover:text-brand-green">Contact</a>
+        <div class="pt-4">
+          <a href="https://wa.me/447399649615" target="_blank" rel="noopener noreferrer"
+             class="w-full bg-brand-green text-white px-6 py-3 rounded-xl font-bold flex items-center justify-center space-x-2">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            <span>WhatsApp Booking</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <section class="bg-brand-light py-20 pt-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in-up">
+      <h1 class="text-5xl font-display font-bold mb-6">
+        About <span class="text-brand-blue">Neat & Tidy UK</span>
+      </h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Providing reliable, high-quality cleaning services designed to make your life easier.
+      </p>
+    </div>
+  </section>
+
+  <!-- Introduction -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1584622781564-1d987f7333c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+               alt="Cleaning Supplies" class="rounded-3xl shadow-2xl"
+               referrerpolicy="no-referrer">
+          <div class="absolute -bottom-6 -right-6 bg-brand-green text-white p-8 rounded-3xl shadow-xl hidden md:block">
+            <p class="text-4xl font-bold">5+</p>
+            <p class="text-sm font-medium">Years Experience</p>
+          </div>
+        </div>
+        <div class="space-y-6">
+          <h2 class="text-3xl font-display font-bold">Our Story</h2>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            At Neat & Tidy UK, we provide reliable, high-quality cleaning services designed to make your life easier. We understand that in today's fast-paced world, your time is valuable. That's why we've dedicated ourselves to taking the burden of cleaning off your shoulders.
+          </p>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            Based in the heart of South London, we've built a reputation for excellence, trust, and meticulous attention to detail. Whether you're a busy professional, a growing family, or a landlord looking for a perfect handover, we have the expertise to deliver results that exceed expectations.
+          </p>
+          <div class="flex items-center space-x-4 pt-4">
+            <div class="flex -space-x-2">
+              <div class="w-12 h-12 rounded-full border-2 border-white bg-gray-200 overflow-hidden">
+                <img src="https://i.pravatar.cc/150?u=1" alt="Avatar" referrerpolicy="no-referrer">
+              </div>
+              <div class="w-12 h-12 rounded-full border-2 border-white bg-gray-200 overflow-hidden">
+                <img src="https://i.pravatar.cc/150?u=2" alt="Avatar" referrerpolicy="no-referrer">
+              </div>
+              <div class="w-12 h-12 rounded-full border-2 border-white bg-gray-200 overflow-hidden">
+                <img src="https://i.pravatar.cc/150?u=3" alt="Avatar" referrerpolicy="no-referrer">
+              </div>
+              <div class="w-12 h-12 rounded-full border-2 border-white bg-gray-200 overflow-hidden">
+                <img src="https://i.pravatar.cc/150?u=4" alt="Avatar" referrerpolicy="no-referrer">
+              </div>
+            </div>
+            <p class="text-sm font-medium text-gray-500">Trusted by 500+ happy clients</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission, Vision, Objectives -->
+  <section class="py-24 bg-brand-dark text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <!-- Mission -->
+        <div class="value-card bg-white/5 p-10 rounded-3xl border border-white/10">
+          <div class="w-16 h-16 bg-brand-blue rounded-2xl flex items-center justify-center mb-8">
+            <i data-lucide="target" class="text-white w-8 h-8"></i>
+          </div>
+          <h3 class="text-2xl font-display font-bold mb-4">Our Mission</h3>
+          <p class="text-gray-400 leading-relaxed">
+            To provide exceptional cleaning services that enhance the quality of life for our clients, ensuring a healthy, clean, and comfortable environment for every home we touch.
+          </p>
+        </div>
+
+        <!-- Vision -->
+        <div class="value-card bg-white/5 p-10 rounded-3xl border border-white/10">
+          <div class="w-16 h-16 bg-brand-green rounded-2xl flex items-center justify-center mb-8">
+            <i data-lucide="eye" class="text-white w-8 h-8"></i>
+          </div>
+          <h3 class="text-2xl font-display font-bold mb-4">Our Vision</h3>
+          <p class="text-gray-400 leading-relaxed">
+            To be the most trusted and preferred cleaning service provider in South London, recognized for our professionalism, integrity, and commitment to excellence.
+          </p>
+        </div>
+
+        <!-- Objectives -->
+        <div class="value-card bg-white/5 p-10 rounded-3xl border border-white/10">
+          <div class="w-16 h-16 bg-brand-blue rounded-2xl flex items-center justify-center mb-8">
+            <i data-lucide="award" class="text-white w-8 h-8"></i>
+          </div>
+          <h3 class="text-2xl font-display font-bold mb-4">Our Objectives</h3>
+          <ul class="text-gray-400 space-y-3">
+            <li class="flex items-center space-x-2">
+              <i data-lucide="shield-check" class="text-brand-green w-5 h-5"></i>
+              <span>100% Client Satisfaction</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i data-lucide="shield-check" class="text-brand-green w-5 h-5"></i>
+              <span>Safety & Security First</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i data-lucide="shield-check" class="text-brand-green w-5 h-5"></i>
+              <span>Eco-friendly Practices</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i data-lucide="shield-check" class="text-brand-green w-5 h-5"></i>
+              <span>Continuous Staff Training</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl font-display font-bold mb-16">The Values We Live By</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="p-6">
+          <div class="text-4xl mb-4">🤝</div>
+          <h4 class="font-bold text-xl mb-2">Integrity</h4>
+          <p class="text-gray-500 text-sm">Honest and transparent in everything we do.</p>
+        </div>
+        <div class="p-6">
+          <div class="text-4xl mb-4">💎</div>
+          <h4 class="font-bold text-xl mb-2">Quality</h4>
+          <p class="text-gray-500 text-sm">Never compromising on the standard of our work.</p>
+        </div>
+        <div class="p-6">
+          <div class="text-4xl mb-4">🚀</div>
+          <h4 class="font-bold text-xl mb-2">Efficiency</h4>
+          <p class="text-gray-500 text-sm">Getting the job done right, in the right time.</p>
+        </div>
+        <div class="p-6">
+          <div class="text-4xl mb-4">❤️</div>
+          <h4 class="font-bold text-xl mb-2">Care</h4>
+          <p class="text-gray-500 text-sm">Treating your home with the utmost respect.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-brand-dark text-white pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div class="space-y-6">
+          <a href="index.html" class="flex items-center space-x-2">
+            <div class="w-10 h-10 bg-brand-blue rounded-lg flex items-center justify-center">
+              <span class="text-white font-display font-bold text-xl">N</span>
+            </div>
+            <span class="font-display font-bold text-xl text-white">
+              Neat & Tidy <span class="text-brand-green">UK</span>
+            </span>
+          </a>
+          <p class="text-gray-400 leading-relaxed">
+            Premium residential cleaning services in South London. We make your home shine so you can focus on what matters most.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-display font-bold text-lg mb-6">Quick Links</h3>
+          <ul class="space-y-4 text-gray-400">
+            <li><a href="index.html" class="hover:text-brand-green transition-colors">Home</a></li>
+            <li><a href="about.html" class="hover:text-brand-green transition-colors">About Us</a></li>
+            <li><a href="services.html" class="hover:text-brand-green transition-colors">Our Services</a></li>
+            <li><a href="pricing.html" class="hover:text-brand-green transition-colors">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-display font-bold text-lg mb-6">Services</h3>
+          <ul class="space-y-4 text-gray-400">
+            <li><a href="services.html" class="hover:text-brand-green transition-colors">Standard Cleaning</a></li>
+            <li><a href="services.html" class="hover:text-brand-green transition-colors">Deep Cleaning</a></li>
+            <li><a href="services.html" class="hover:text-brand-green transition-colors">Oven Cleaning</a></li>
+            <li><a href="services.html" class="hover:text-brand-green transition-colors">Window Cleaning</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-display font-bold text-lg mb-6">Contact Us</h3>
+          <ul class="space-y-4 text-gray-400">
+            <li class="flex items-start space-x-3">
+              <i data-lucide="map-pin" class="text-brand-green mt-1 flex-shrink-0 w-5 h-5"></i>
+              <span>South London & Surrounding Areas</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <i data-lucide="phone" class="text-brand-green flex-shrink-0 w-5 h-5"></i>
+              <span>+44 7399 649615</span>
+            </li>
+            <li class="pt-2">
+              <a href="https://wa.me/447399649615" target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center space-x-2 text-brand-green font-bold hover:underline">
+                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                <span>Chat on WhatsApp</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+        <p>&copy; 2025 Neat & Tidy UK. All rights reserved.</p>
+        <div class="flex space-x-6 mt-4 md:mt-0">
+          <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/447399649615" target="_blank" rel="noopener noreferrer"
+     class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl flex items-center justify-center group overflow-hidden hover:scale-110 transition-transform">
+    <i data-lucide="message-circle" class="w-8 h-8"></i>
+    <span class="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-300 font-bold whitespace-nowrap">
+      Book on WhatsApp
+    </span>
+  </a>
+
+  <script>
+    lucide.createIcons();
+    
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing - Neat & Tidy UK</title>
+  <meta name="description" content="Transparent pricing for professional cleaning services in South London. View our rates and get a free quote.">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-blue': '#1e88e5',
+            'brand-green': '#43a047',
+            'brand-light': '#f8f9fa',
+            'brand-dark': '#212529',
+          },
+          fontFamily: {
+            'sans': ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            'display': ['Space Grotesk', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Space Grotesk', sans-serif; }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    .mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    .mobile-menu.open {
+      max-height: 400px;
+    }
+    
+    .pricing-card {
+      transition: background-color 0.3s ease;
+    }
+    .pricing-card:hover {
+      background-color: #eff6ff;
+    }
+  </style>
+</head>
+<body class="bg-white text-brand-dark">
+  
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white shadow-md py-2">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center">
+        <a href="index.html" class="flex items-center space-x-2">
+          <div class="w-10 h-10 bg-brand-blue rounded-lg flex items-center justify-center">
+            <span class="text-white font-display font-bold text-xl">N</span>
+          </div>
+          <span class="font-display font-bold text-xl text-brand-dark">
+            Neat & Tidy <span class="text-brand-green">UK</span>
+          </span>
+        </a>
+
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="nav-link font-medium text-brand-dark hover:text-brand-green transition-colors">Home</a>
+          <a href="about.html" class="nav-link font-medium text-brand-dark hover:text-brand-green transition-colors">About</a>
+          <a href="services.html" class="nav-link font-medium text-brand-dark hover:text-brand-green transition-colors">Services</a>
+          <a href="pricing.html" class="nav-link font-medium text-brand-green">Pricing</a>
+          <a href="areas.html" class="nav-link font-medium text-brand-dark hover:text-brand-green transition-colors">Areas</a>
+          <a href="contact.html" class="nav-link font-medium text-brand-dark hover:text-brand-green transition-colors">Contact</a>
+          <a href="https://wa.me/447399649615" target="_blank" rel="noopener noreferrer"
+             class="bg-brand-green text-white px-6 py-2 rounded-full font-bold flex items-center space-x-2 hover:bg-opacity-90 transition-all shadow-lg">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>Book Now</span>
+          </a>
+        </div>
+
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-brand-dark">
+          <i data-lucide="menu" class="w-7 h-7"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t border-gray-100">
+      <div class="px-4 pt-2 pb-6 space-y-1">
+        <a href="index.html" class="block px-3 py-4 text-base font-medium border-b border-gray-50 text-brand-dark hover:text-brand-green">Home</a>
+        <a href="about.html" class="block px-3 py-4 text-base font-medium border-b border-gray-50 text-brand-dark hover:text-brand-green">About</a>
+        <a href="services.html" class="block px-3 py-4 text-base font-medium border-b border-gray-50 text-brand-dark hover:text-brand-green">Services</a>
+        <a href="pricing.html" class="block px-3 py-4 text-base font-medium border-b border-gray-50 text-brand-green">Pricing</a>
+        <a href="areas.html" class="block px-3 py-4 text-base font-medium border-b border-gray-50 text-brand-dark hover:text-brand-green">Areas</a>
+        <a href="contact.html" class="block px-3 py-4 text-base font-medium border-b border-gray-50 text-brand-dark hover:text-brand-green">Contact</a>
+        <div class="pt-4">
+          <a href="https://wa.me/447399649615" target="_blank" rel="noopener noreferrer"
+             class="w-full bg-brand-green text-white px-6 py-3 rounded-xl font-bold flex items-center justify-center space-x-2">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            <span>WhatsApp Booking</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <section class="bg-brand-light py-20 pt-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in-up">
+      <h1 class="text-5xl font-display font-bold mb-6">
+        Transparent <span class="text-brand-green">Pricing</span>
+      </h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Premium cleaning doesn't have to be complicated. Simple, fair, and competitive rates.
+      </p>
+    </div>
+  </section>
+
+  <!-- Pricing Table -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <!-- Standard Pricing Card -->
+        <div class="lg:col-span-2 bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border border-gray-100">
+          <div class="bg-brand-blue p-8 text-white">
+            <h2 class="text-3xl font-display font-bold">Standard Cleaning Rates</h2>
+            <p class="text-blue-100 mt-2">Our most popular regular maintenance cleaning.</p>
+          </div>
+          <div class="p-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="pricing-card flex items-center justify-between p-6 bg-brand-light rounded-2xl">
+                <span class="font-bold text-lg text-brand-dark">Studio</span>
+                <div class="flex items-baseline">
+                  <span class="text-gray-400 text-sm mr-1">from</span>
+                  <span class="text-3xl font-display font-bold text-brand-blue">£34</span>
+                </div>
+              </div>
+              <div class="pricing-card flex items-center justify-between p-6 bg-brand-light rounded-2xl">
+                <span class="font-bold text-lg text-brand-dark">1 Bedroom</span>
+                <div class="flex items-baseline">
+                  <span class="text-gray-400 text-sm mr-1">from</span>
+                  <span class="text-3xl font-display font-bold text-brand-blue">£51</span>
+                </div>
+              </div>
+              <div class="pricing-card flex items-center justify-between p-6 bg-brand-light rounded-2xl">
+                <span class="font-bold text-lg text-brand-dark">2 Bedroom</span>
+                <div class="flex items-baseline">
+                  <span class="text-gray-400 text-sm mr-1">from</span>
+                  <span class="text-3xl font-display font-bold text-brand-blue">£68</span>
+                </div>
+              </div>
+              <div class="pricing-card flex items-center justify-between p-6 bg-brand-light rounded-2xl">
+                <span class="font-bold text-lg text-brand-dark">3 Bedroom</span>
+                <div class="flex items-baseline">
+                  <span class="text-gray-400 text-sm mr-1">from</span>
+                  <span class="text-3xl font-display font-bold text-brand-blue">£85</span>
+                </div>
+              </div>
+              <div class="pricing-card flex items-center justify-between p-6 bg-brand-light rounded-2xl">
+                <span class="font-bold text-lg text-brand-dark">4 Bedroom</span>
+                <div class="flex items-baseline">
+                  <span class="text-gray-400 text-sm mr-1">from</span>
+                  <span class="text-3xl font-display font-bold text-brand-blue">£102</span>
+                </div>
+              </div>
+              <div class="pricing-card flex items-center justify-between p-6 bg-brand-light rounded-2xl">
+                <span class="font-bold text-lg text-brand-dark">5 Bedroom</span>
+                <div class="flex items-baseline">
+                  <span class="text-gray-400 text-sm mr-1">from</span>
+                  <span class="text-3xl font-display font-bold text-brand-blue">£119</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-10 p-6 bg-blue-50 rounded-2xl border border-blue-100 flex items-start space-x-4">
+              <i data-lucide="info" class="text-brand-blue flex-shrink-0 mt-1 w-5 h-5"></i>
+              <p class="text-sm text-brand-blue/80 leading-relaxed">
+                <strong>Note:</strong> Prices shown are starting rates for standard cleaning. Final prices may vary depending on the property condition, specific requirements, and any selected add-ons.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add-ons Card -->
+        <div class="bg-brand-dark rounded-[2.5rem] shadow-2xl p-8 text-white flex flex-col">
+          <h3 class="text-2xl font-display font-bold mb-8 text-brand-green">Popular Add-ons</h3>
+          <div class="space-y-6 flex-grow">
+            <div class="flex items-center justify-between border-b border-white/10 pb-4">
+              <div class="flex items-center space-x-3">
+                <i data-lucide="check" class="text-brand-green w-5 h-5"></i>
+                <span class="font-medium">Oven Cleaning</span>
+              </div>
+              <span class="text-brand-green font-bold">From £25</span>
+            </div>
+            <div class="flex items-center justify-between border-b border-white/10 pb-4">
+              <div class="flex items-center space-x-3">
+                <i data-lucide="check" class="text-brand-green w-5 h-5"></i>
+                <span class="font-medium">Fridge Cleaning</span>
+              </div>
+              <span class="text-brand-green font-bold">From £15</span>
+            </div>
+            <div class="flex items-center justify-between border-b border-white/10 pb-4">
+              <div class="flex items-center space-x-3">
+                <i data-lucide="check" class="text-brand-green w-5 h-5"></i>
+                <span class="font-medium">Inside Windows</span>
+              </div>
+              <span class="text-brand-green font-bold">From £20</span>
+            </div>
+            <div class="flex items-center justify-between border-b border-white/10 pb-4">
+              <div class="flex items-center space-x-3">
+                <i data-lucide="check" class="text-brand-green w-5 h-5"></i>
+                <span class="font-medium">Laundry & Ironing</span>
+              </div>
+              <span class="text-brand-green font-bold">From £15/hr</span>
+            </div>
+            <div class="flex items-center justify-between border-b border-white/10 pb-4">
+              <div class="flex items-center space-x-3">
+                <i data-lucide="check" class="text-brand-green w-5 h-5"></i>
+                <span class="font-medium">Deep Cleaning Upgrade</span>
+              </div>
+              <span class="text-brand-green font-bold">Contact for quote</span>
+            </div>
+          </div>
+          
+          <div class="mt-12 space-y-4">
+            <p class="text-sm text-gray-400 text-center italic">
+              "Prices may vary depending on property size and condition."
+            </p>
+            <a href="contact.html" class="block w-full bg-brand-blue text-white text-center py-4 rounded-full font-bold hover:bg-opacity-90 transition-all">
+              Get a Custom Quote
+            </a>
+            <a href="https://wa.me/447399649615" 
+               class="block w-full bg-brand-green text-white text-center py-4 rounded-full font-bold hover:bg-opacity-90 transition-all flex items-center justify-center space-x-2">
+              <i data-lucide="message-circle" class="w-5 h-5"></i>
+              <span>Book on WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Promise Section -->
+  <section class="py-24 bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-display font-bold mb-4">The Neat & Tidy Promise</h2>
+        <p class="text-gray-600">No hidden fees, no surprises. Just honest work.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div class="text-center space-y-4">
+          <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mx-auto text-3xl">💰</div>
+          <h4 class="text-xl font-bold">No Hidden Costs</h4>
+          <p class="text-gray-500">What we quote is what you pay. We are transparent about all our charges from the start.</p>
+        </div>
+        <div class="text-center space-y-4">
+          <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mx-auto text-3xl">🛡️</div>
+          <h4 class="text-xl font-bold">Fully Insured</h4>
+          <p class="text-gray-500">Your property is protected. Our comprehensive insurance covers any accidental damage.</p>
+        </div>
+        <div class="text-center space-y-4">
+          <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mx-auto text-3xl">⭐</div>
+          <h4 class="text-xl font-bold">Quality Guaranteed</h4>
+          <p class="text-gray-500">Not happy with the clean? Let us know within 24 hours and we'll come back to fix it for free.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-brand-dark text-white pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div class="space-y-6">
+          <a href="index.html" class="flex items-center space-x-2">
+            <div class="w-10 h-10 bg-brand-blue rounded-lg flex items-center justify-center">
+              <span class="text-white font-display font-bold text-xl">N</span>
+            </div>
+            <span class="font-display font-bold text-xl text-white">
+              Neat & Tidy <span class="text-brand-green">UK</span>
+            </span>
+          </a>
+          <p class="text-gray-400 leading-relaxed">
+            Premium residential cleaning services in South London.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-display font-bold text-lg mb-6">Quick Links</h3>
+          <ul class="space-y-4 text-gray-400">
+            <li><a href="index.html" class="hover:text-brand-green transition-colors">Home</a></li>
+            <li><a href="about.html" class="hover:text-brand-green transition-colors">About Us</a></li>
+            <li><a href="services.html" class="hover:text-brand-green transition-colors">Services</a></li>
+            <li><a href="pricing.html" class="hover:text-brand-green transition-colors">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-display font-bold text-lg mb-6">Services</h3>
+          <ul class="space-y-4 text-gray-400">
+            <li><a href="services.html" class="hover:text-brand-green transition-colors">Standard Cleaning</a></li>
+            <li><a href="services.html" class="hover:text-brand-green transition-colors">Deep Cleaning</a></li>
+            <li><a href="services.html" class="hover:text-brand-green transition-colors">Oven Cleaning</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-display font-bold text-lg mb-6">Contact</h3>
+          <ul class="space-y-4 text-gray-400">
+            <li class="flex items-center space-x-3">
+              <i data-lucide="phone" class="text-brand-green w-5 h-5"></i>
+              <span>+44 7399 649615</span>
+            </li>
+            <li>
+              <a href="https://wa.me/447399649615" class="inline-flex items-center space-x-2 text-brand-green font-bold hover:underline">
+                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                <span>WhatsApp</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+        <p>&copy; 2025 Neat & Tidy UK. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/447399649615" target="_blank" rel="noopener noreferrer"
+     class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl flex items-center justify-center group overflow-hidden hover:scale-110 transition-transform">
+    <i data-lucide="message-circle" class="w-8 h-8"></i>
+    <span class="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-300 font-bold whitespace-nowrap">
+      Book on WhatsApp
+    </span>
+  </a>
+
+  <script>
+    lucide.createIcons();
+    
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

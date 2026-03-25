@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services - Neat & Tidy UK</title>
+  <meta name="description" content="Professional cleaning services in South London. Standard cleaning, deep cleaning, oven cleaning, window cleaning, and more.">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-blue': '#1e88e5',
+            'brand-green': '#43a047',
+            'brand-light': '#f8f9fa',
+            'brand-dark': '#212529',
+          },
+          fontFamily: {
+            'sans': ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            'display': ['Space Grotesk', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Space Grotesk', sans-serif; }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    .mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    .mobile-menu.open {
+      max-height: 400px;
+    }
+  </style>
+</head>
+<body class="bg-white text-brand-dark">
+  
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white shadow-md py-2">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center">
+        <a href="index.html" class="flex items-center space-x-2">
+          <div class="w-10 h-10 bg-brand-blue rounded-lg flex items-center justify-center">
+            <span class="text-white font-display font-bold text-xl">N</span>
+          </div>
+          <span class="font-display font-bold text-xl text-brand-dark">
+            Neat & Tidy <span class="text-brand-green">UK</span>
+          </span>
+        </a>
+
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="nav-link font-medium text-brand-dark hover:text-brand-green transition-colors">Home</a>
+          <a href="about.html" class="nav-link font-medium text-brand-dark hover:text-brand-green transition-colors">About</a>
+          <a href="services.html" class="nav-link font-medium text-brand-green">Services</a>
+          <a href="pricing.html" class="nav-link font-medium text-brand-dark hover:text-brand-green transition-colors">Pricing</a>
+          <a href="areas.html" class="nav-link font-medium text-brand-dark hover:text-brand-green transition-colors">Areas</a>
+          <a href="contact.html" class="nav-link font-medium text-brand-dark hover:text-brand-green transition-colors">Contact</a>
+          <a href="https://wa.me/447399649615" target="_blank" rel="noopener noreferrer"
+             class="bg-brand-green text-white px-6 py-2 rounded-full font-bold flex items-center space-x-2 hover:bg-opacity-90 transition-all shadow-lg">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>Book Now</span>
+          </a>
+        </div>
+
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-brand-dark">
+          <i data-lucide="menu" class="w-7 h-7"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t border-gray-100">
+      <div class="px-4 pt-2 pb-6 space-y-1">
+        <a href="index.html" class="block px-3 py-4 text-base font-medium border-b border-gray-50 text-brand-dark hover:text-brand-green">Home</a>
+        <a href="about.html" class="block px-3 py-4 text-base font-medium border-b border-gray-50 text-brand-dark hover:text-brand-green">About</a>
+        <a href="services.html" class="block px-3 py-4 text-base font-medium border-b border-gray-50 text-brand-green">Services</a>
+        <a href="pricing.html" class="block px-3 py-4 text-base font-medium border-b border-gray-50 text-brand-dark hover:text-brand-green">Pricing</a>
+        <a href="areas.html" class="block px-3 py-4 text-base font-medium border-b border-gray-50 text-brand-dark hover:text-brand-green">Areas</a>
+        <a href="contact.html" class="block px-3 py-4 text-base font-medium border-b border-gray-50 text-brand-dark hover:text-brand-green">Contact</a>
+        <div class="pt-4">
+          <a href="https://wa.me/447399649615" target="_blank" rel="noopener noreferrer"
+             class="w-full bg-brand-green text-white px-6 py-3 rounded-xl font-bold flex items-center justify-center space-x-2">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            <span>WhatsApp Booking</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <section class="bg-brand-blue py-20 pt-32 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in-up">
+      <h1 class="text-5xl font-display font-bold mb-6">
+        Our Professional Services
+      </h1>
+      <p class="text-xl text-blue-100 max-w-3xl mx-auto">
+        Tailored cleaning solutions for every home and every need.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services List -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-24">
+        
+        <!-- Service 1: Standard Cleaning -->
+        <div class="flex flex-col lg:flex-row gap-12 items-center">
+          <div class="w-full lg:w-1/2">
+            <div class="relative">
+              <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6958?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                   alt="Standard Cleaning" class="rounded-[2rem] shadow-2xl w-full aspect-video object-cover"
+                   referrerpolicy="no-referrer">
+              <div class="absolute -bottom-4 -right-4 bg-brand-green text-white px-6 py-2 rounded-full font-bold shadow-lg">
+                Premium Quality
+              </div>
+            </div>
+          </div>
+          <div class="w-full lg:w-1/2 space-y-6">
+            <h2 class="text-3xl font-display font-bold text-brand-dark">Standard Cleaning</h2>
+            <p class="text-lg text-gray-600 leading-relaxed">Perfect for maintaining a clean and healthy home on a regular basis.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+              <div>
+                <h4 class="font-bold text-brand-blue mb-3 flex items-center">
+                  <i data-lucide="check-circle-2" class="mr-2 w-5 h-5"></i> Key Benefits
+                </h4>
+                <ul class="space-y-2">
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-green rounded-full mr-2"></span> Dusting all surfaces</li>
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-green rounded-full mr-2"></span> Vacuuming & Mopping</li>
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-green rounded-full mr-2"></span> Kitchen & Bathroom sanitization</li>
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-green rounded-full mr-2"></span> Rubbish removal</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-brand-green mb-3 flex items-center">
+                  <i data-lucide="plus" class="mr-2 w-5 h-5"></i> Optional Add-ons
+                </h4>
+                <ul class="space-y-2">
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-blue rounded-full mr-2"></span> Inside Windows</li>
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-blue rounded-full mr-2"></span> Bed changing</li>
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-blue rounded-full mr-2"></span> Ironing</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="pt-6">
+              <a href="contact.html" class="bg-brand-dark text-white px-8 py-3 rounded-full font-bold hover:bg-brand-blue transition-all inline-block">
+                Book This Service
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 2: Deep Cleaning -->
+        <div class="flex flex-col lg:flex-row-reverse gap-12 items-center">
+          <div class="w-full lg:w-1/2">
+            <div class="relative">
+              <img src="https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                   alt="Deep Cleaning" class="rounded-[2rem] shadow-2xl w-full aspect-video object-cover"
+                   referrerpolicy="no-referrer">
+              <div class="absolute -bottom-4 -left-4 bg-brand-green text-white px-6 py-2 rounded-full font-bold shadow-lg">
+                Premium Quality
+              </div>
+            </div>
+          </div>
+          <div class="w-full lg:w-1/2 space-y-6">
+            <h2 class="text-3xl font-display font-bold text-brand-dark">Deep Cleaning</h2>
+            <p class="text-lg text-gray-600 leading-relaxed">A comprehensive top-to-bottom clean for homes that need extra attention.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+              <div>
+                <h4 class="font-bold text-brand-blue mb-3 flex items-center">
+                  <i data-lucide="check-circle-2" class="mr-2 w-5 h-5"></i> Key Benefits
+                </h4>
+                <ul class="space-y-2">
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-green rounded-full mr-2"></span> Limescale removal</li>
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-green rounded-full mr-2"></span> Behind furniture cleaning</li>
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-green rounded-full mr-2"></span> Skirting boards & Doors</li>
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-green rounded-full mr-2"></span> Deep kitchen degreasing</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-brand-green mb-3 flex items-center">
+                  <i data-lucide="plus" class="mr-2 w-5 h-5"></i> Optional Add-ons
+                </h4>
+                <ul class="space-y-2">
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-blue rounded-full mr-2"></span> Oven cleaning</li>
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-blue rounded-full mr-2"></span> Fridge cleaning</li>
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-blue rounded-full mr-2"></span> Inside cupboards</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="pt-6">
+              <a href="contact.html" class="bg-brand-dark text-white px-8 py-3 rounded-full font-bold hover:bg-brand-blue transition-all inline-block">
+                Book This Service
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 3: Oven Cleaning -->
+        <div class="flex flex-col lg:flex-row gap-12 items-center">
+          <div class="w-full lg:w-1/2">
+            <div class="relative">
+              <img src="https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                   alt="Oven Cleaning" class="rounded-[2rem] shadow-2xl w-full aspect-video object-cover"
+                   referrerpolicy="no-referrer">
+              <div class="absolute -bottom-4 -right-4 bg-brand-green text-white px-6 py-2 rounded-full font-bold shadow-lg">
+                Premium Quality
+              </div>
+            </div>
+          </div>
+          <div class="w-full lg:w-1/2 space-y-6">
+            <h2 class="text-3xl font-display font-bold text-brand-dark">Oven Cleaning</h2>
+            <p class="text-lg text-gray-600 leading-relaxed">Restore your oven to its former glory with our professional degreasing service.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+              <div>
+                <h4 class="font-bold text-brand-blue mb-3 flex items-center">
+                  <i data-lucide="check-circle-2" class="mr-2 w-5 h-5"></i> Key Benefits
+                </h4>
+                <ul class="space-y-2">
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-green rounded-full mr-2"></span> Non-caustic solutions</li>
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-green rounded-full mr-2"></span> Removes burnt-on grease</li>
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-green rounded-full mr-2"></span> Improves efficiency</li>
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-green rounded-full mr-2"></span> Odour elimination</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-brand-green mb-3 flex items-center">
+                  <i data-lucide="plus" class="mr-2 w-5 h-5"></i> Optional Add-ons
+                </h4>
+                <ul class="space-y-2">
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-blue rounded-full mr-2"></span> Hob cleaning</li>
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-blue rounded-full mr-2"></span> Extractor fan</li>
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-blue rounded-full mr-2"></span> Grill pan</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="pt-6">
+              <a href="contact.html" class="bg-brand-dark text-white px-8 py-3 rounded-full font-bold hover:bg-brand-blue transition-all inline-block">
+                Book This Service
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 4: Fridge Cleaning -->
+        <div class="flex flex-col lg:flex-row-reverse gap-12 items-center">
+          <div class="w-full lg:w-1/2">
+            <div class="relative">
+              <img src="https://images.unsplash.com/photo-1584622781564-1d987f7333c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                   alt="Fridge Cleaning" class="rounded-[2rem] shadow-2xl w-full aspect-video object-cover"
+                   referrerpolicy="no-referrer">
+              <div class="absolute -bottom-4 -left-4 bg-brand-green text-white px-6 py-2 rounded-full font-bold shadow-lg">
+                Premium Quality
+              </div>
+            </div>
+          </div>
+          <div class="w-full lg:w-1/2 space-y-6">
+            <h2 class="text-3xl font-display font-bold text-brand-dark">Fridge Cleaning</h2>
+            <p class="text-lg text-gray-600 leading-relaxed">Hygienic cleaning for your food storage areas.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+              <div>
+                <h4 class="font-bold text-brand-blue mb-3 flex items-center">
+                  <i data-lucide="check-circle-2" class="mr-2 w-5 h-5"></i> Key Benefits
+                </h4>
+                <ul class="space-y-2">
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-green rounded-full mr-2"></span> Full sanitization</li>
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-green rounded-full mr-2"></span> Shelf & Drawer cleaning</li>
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-green rounded-full mr-2"></span> Odour removal</li>
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-green rounded-full mr-2"></span> Seal cleaning</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-brand-green mb-3 flex items-center">
+                  <i data-lucide="plus" class="mr-2 w-5 h-5"></i> Optional Add-ons
+                </h4>
+                <ul class="space-y-2">
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-blue rounded-full mr-2"></span> Freezer defrost</li>
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-blue rounded-full mr-2"></span> Exterior polish</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="pt-6">
+              <a href="contact.html" class="bg-brand-dark text-white px-8 py-3 rounded-full font-bold hover:bg-brand-blue transition-all inline-block">
+                Book This Service
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 5: Window Cleaning -->
+        <div class="flex flex-col lg:flex-row gap-12 items-center">
+          <div class="w-full lg:w-1/2">
+            <div class="relative">
+              <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                   alt="Window Cleaning" class="rounded-[2rem] shadow-2xl w-full aspect-video object-cover"
+                   referrerpolicy="no-referrer">
+              <div class="absolute -bottom-4 -right-4 bg-brand-green text-white px-6 py-2 rounded-full font-bold shadow-lg">
+                Premium Quality
+              </div>
+            </div>
+          </div>
+          <div class="w-full lg:w-1/2 space-y-6">
+            <h2 class="text-3xl font-display font-bold text-brand-dark">Window Cleaning</h2>
+            <p class="text-lg text-gray-600 leading-relaxed">Crystal clear views with our professional interior window cleaning.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+              <div>
+                <h4 class="font-bold text-brand-blue mb-3 flex items-center">
+                  <i data-lucide="check-circle-2" class="mr-2 w-5 h-5"></i> Key Benefits
+                </h4>
+                <ul class="space-y-2">
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-green rounded-full mr-2"></span> Streak-free finish</li>
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-green rounded-full mr-2"></span> Frame & Sill wiping</li>
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-green rounded-full mr-2"></span> Safe techniques</li>
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-green rounded-full mr-2"></span> Improved natural light</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-brand-green mb-3 flex items-center">
+                  <i data-lucide="plus" class="mr-2 w-5 h-5"></i> Optional Add-ons
+                </h4>
+                <ul class="space-y-2">
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-blue rounded-full mr-2"></span> Tracks cleaning</li>
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-blue rounded-full mr-2"></span> Screen cleaning</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="pt-6">
+              <a href="contact.html" class="bg-brand-dark text-white px-8 py-3 rounded-full font-bold hover:bg-brand-blue transition-all inline-block">
+                Book This Service
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 6: Laundry Services -->
+        <div class="flex flex-col lg:flex-row-reverse gap-12 items-center">
+          <div class="w-full lg:w-1/2">
+            <div class="relative">
+              <img src="https://images.unsplash.com/photo-1545173168-9f1947eebb7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                   alt="Laundry Services" class="rounded-[2rem] shadow-2xl w-full aspect-video object-cover"
+                   referrerpolicy="no-referrer">
+              <div class="absolute -bottom-4 -left-4 bg-brand-green text-white px-6 py-2 rounded-full font-bold shadow-lg">
+                Premium Quality
+              </div>
+            </div>
+          </div>
+          <div class="w-full lg:w-1/2 space-y-6">
+            <h2 class="text-3xl font-display font-bold text-brand-dark">Laundry Services</h2>
+            <p class="text-lg text-gray-600 leading-relaxed">Take the hassle out of laundry day with our washing and folding service.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+              <div>
+                <h4 class="font-bold text-brand-blue mb-3 flex items-center">
+                  <i data-lucide="check-circle-2" class="mr-2 w-5 h-5"></i> Key Benefits
+                </h4>
+                <ul class="space-y-2">
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-green rounded-full mr-2"></span> Washing & Drying</li>
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-green rounded-full mr-2"></span> Expert folding</li>
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-green rounded-full mr-2"></span> Delicate care</li>
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-green rounded-full mr-2"></span> Time-saving</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-brand-green mb-3 flex items-center">
+                  <i data-lucide="plus" class="mr-2 w-5 h-5"></i> Optional Add-ons
+                </h4>
+                <ul class="space-y-2">
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-blue rounded-full mr-2"></span> Ironing</li>
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-blue rounded-full mr-2"></span> Bed linen changing</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="pt-6">
+              <a href="contact.html" class="bg-brand-dark text-white px-8 py-3 rounded-full font-bold hover:bg-brand-blue transition-all inline-block">
+                Book This Service
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 7: Wardrobe Organising -->
+        <div class="flex flex-col lg:flex-row gap-12 items-center">
+          <div class="w-full lg:w-1/2">
+            <div class="relative">
+              <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                   alt="Wardrobe Organising" class="rounded-[2rem] shadow-2xl w-full aspect-video object-cover"
+                   referrerpolicy="no-referrer">
+              <div class="absolute -bottom-4 -right-4 bg-brand-green text-white px-6 py-2 rounded-full font-bold shadow-lg">
+                Premium Quality
+              </div>
+            </div>
+          </div>
+          <div class="w-full lg:w-1/2 space-y-6">
+            <h2 class="text-3xl font-display font-bold text-brand-dark">Wardrobe Organising</h2>
+            <p class="text-lg text-gray-600 leading-relaxed">Declutter and organize your clothing for a stress-free morning routine.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+              <div>
+                <h4 class="font-bold text-brand-blue mb-3 flex items-center">
+                  <i data-lucide="check-circle-2" class="mr-2 w-5 h-5"></i> Key Benefits
+                </h4>
+                <ul class="space-y-2">
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-green rounded-full mr-2"></span> Space optimization</li>
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-green rounded-full mr-2"></span> Seasonal rotation</li>
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-green rounded-full mr-2"></span> Categorization</li>
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-green rounded-full mr-2"></span> Decluttering advice</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-brand-green mb-3 flex items-center">
+                  <i data-lucide="plus" class="mr-2 w-5 h-5"></i> Optional Add-ons
+                </h4>
+                <ul class="space-y-2">
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-blue rounded-full mr-2"></span> Hanger replacement</li>
+                  <li class="text-gray-500 text-sm flex items-center"><span class="w-1.5 h-1.5 bg-brand-blue rounded-full mr-2"></span> Shoe organization</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="pt-6">
+              <a href="contact.html" class="bg-brand-dark text-white px-8 py-3 rounded-full font-bold hover:bg-brand-blue transition-all inline-block">
+                Book This Service
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 bg-brand-light">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-display font-bold mb-6">Need a Custom Package?</h2>
+      <p class="text-gray-600 mb-10 text-lg">
+        We understand that every home is unique. Contact us today to discuss your specific requirements and get a tailored quote.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="contact.html" class="bg-brand-blue text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition-all">
+          Get a Free Quote
+        </a>
+        <a href="https://wa.me/447399649615" 
+           class="bg-brand-green text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2">
+          Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-brand-dark text-white pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div class="space-y-6">
+          <a href="index.html" class="flex items-center space-x-2">
+            <div class="w-10 h-10 bg-brand-blue rounded-lg flex items-center justify-center">
+              <span class="text-white font-display font-bold text-xl">N</span>
+            </div>
+            <span class="font-display font-bold text-xl text-white">
+              Neat & Tidy <span class="text-brand-green">UK</span>
+            </span>
+          </a>
+          <p class="text-gray-400 leading-relaxed">
+            Premium residential cleaning services in South London.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-display font-bold text-lg mb-6">Quick Links</h3>
+          <ul class="space-y-4 text-gray-400">
+            <li><a href="index.html" class="hover:text-brand-green transition-colors">Home</a></li>
+            <li><a href="about.html" class="hover:text-brand-green transition-colors">About Us</a></li>
+            <li><a href="services.html" class="hover:text-brand-green transition-colors">Services</a></li>
+            <li><a href="pricing.html" class="hover:text-brand-green transition-colors">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-display font-bold text-lg mb-6">Services</h3>
+          <ul class="space-y-4 text-gray-400">
+            <li><a href="services.html" class="hover:text-brand-green transition-colors">Standard Cleaning</a></li>
+            <li><a href="services.html" class="hover:text-brand-green transition-colors">Deep Cleaning</a></li>
+            <li><a href="services.html" class="hover:text-brand-green transition-colors">Oven Cleaning</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-display font-bold text-lg mb-6">Contact</h3>
+          <ul class="space-y-4 text-gray-400">
+            <li class="flex items-center space-x-3">
+              <i data-lucide="phone" class="text-brand-green w-5 h-5"></i>
+              <span>+44 7399 649615</span>
+            </li>
+            <li>
+              <a href="https://wa.me/447399649615" class="inline-flex items-center space-x-2 text-brand-green font-bold hover:underline">
+                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                <span>WhatsApp</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+        <p>&copy; 2025 Neat & Tidy UK. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/447399649615" target="_blank" rel="noopener noreferrer"
+     class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl flex items-center justify-center group overflow-hidden hover:scale-110 transition-transform">
+    <i data-lucide="message-circle" class="w-8 h-8"></i>
+    <span class="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-300 font-bold whitespace-nowrap">
+      Book on WhatsApp
+    </span>
+  </a>
+
+  <script>
+    lucide.createIcons();
+    
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

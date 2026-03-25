@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neat & Tidy UK - Professional Cleaning Services</title>
+  <meta name="description" content="Premium residential cleaning services in South London. Book professional cleaners for your home today.">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-blue': '#1e88e5',
+            'brand-green': '#43a047',
+            'brand-light': '#f8f9fa',
+            'brand-dark': '#212529',
+          },
+          fontFamily: {
+            'sans': ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            'display': ['Space Grotesk', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Space Grotesk', sans-serif; }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    .animate-fade-in {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+    
+    .animate-scale-in {
+      animation: scaleIn 0.5s ease-out forwards;
+    }
+    
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+    .delay-400 { animation-delay: 0.4s; }
+    
+    /* Card hover effect */
+    .service-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    
+    /* Testimonial card */
+    .testimonial-card {
+      transition: box-shadow 0.3s ease;
+    }
+    .testimonial-card:hover {
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    /* Mobile menu */
+    .mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    .mobile-menu.open {
+      max-height: 400px;
+    }
+  </style>
+</head>
+<body class="bg-white text-brand-dark">
+  
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center space-x-2">
+          <div class="w-10 h-10 bg-brand-blue rounded-lg flex items-center justify-center">
+            <span class="text-white font-display font-bold text-xl">N</span>
+          </div>
+          <span class="font-display font-bold text-xl text-white nav-text">
+            Neat & Tidy <span class="text-brand-green">UK</span>
+          </span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="nav-link font-medium text-white hover:text-brand-green transition-colors">Home</a>
+          <a href="about.html" class="nav-link font-medium text-white hover:text-brand-green transition-colors">About</a>
+          <a href="services.html" class="nav-link font-medium text-white hover:text-brand-green transition-colors">Services</a>
+          <a href="pricing.html" class="nav-link font-medium text-white hover:text-brand-green transition-colors">Pricing</a>
+          <a href="areas.html" class="nav-link font-medium text-white hover:text-brand-green transition-colors">Areas</a>
+          <a href="contact.html" class="nav-link font-medium text-white hover:text-brand-green transition-colors">Contact</a>
+          <a href="https://wa.me/447399649615" target="_blank" rel="noopener noreferrer"
+             class="bg-brand-green text-white px-6 py-2 rounded-full font-bold flex items-center space-x-2 hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>Book Now</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-white">
+          <i data-lucide="menu" class="w-7 h-7"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t border-gray-100">
+      <div class="px-4 pt-2 pb-6 space-y-1">
+        <a href="index.html" class="block px-3 py-4 text-base font-medium border-b border-gray-50 text-brand-green">Home</a>
+        <a href="about.html" class="block px-3 py-4 text-base font-medium border-b border-gray-50 text-brand-dark hover:text-brand-green">About</a>
+        <a href="services.html" class="block px-3 py-4 text-base font-medium border-b border-gray-50 text-brand-dark hover:text-brand-green">Services</a>
+        <a href="pricing.html" class="block px-3 py-4 text-base font-medium border-b border-gray-50 text-brand-dark hover:text-brand-green">Pricing</a>
+        <a href="areas.html" class="block px-3 py-4 text-base font-medium border-b border-gray-50 text-brand-dark hover:text-brand-green">Areas</a>
+        <a href="contact.html" class="block px-3 py-4 text-base font-medium border-b border-gray-50 text-brand-dark hover:text-brand-green">Contact</a>
+        <div class="pt-4">
+          <a href="https://wa.me/447399649615" target="_blank" rel="noopener noreferrer"
+             class="w-full bg-brand-green text-white px-6 py-3 rounded-xl font-bold flex items-center justify-center space-x-2">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            <span>WhatsApp Booking</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center pt-20">
+    <div class="absolute inset-0 z-0">
+    <img src="https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+         alt="Clean and Bright Living Room" 
+         class="w-full h-full object-cover brightness-[0.4]"
+         referrerpolicy="no-referrer">
+    <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/80 to-transparent"></div>
+  </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-2xl text-white opacity-0 animate-fade-in-up">
+        <div class="inline-flex items-center space-x-2 bg-brand-green/20 border border-brand-green/30 px-4 py-2 rounded-full mb-6">
+          <i data-lucide="star" class="text-brand-green fill-brand-green w-4 h-4"></i>
+          <span class="text-sm font-bold text-brand-green uppercase tracking-wider">Premium Cleaning Service</span>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-display font-bold mb-6 leading-tight">
+          Professional Cleaning <br>
+          <span class="text-brand-green">You Can Trust</span>
+        </h1>
+        <p class="text-xl text-gray-300 mb-10 leading-relaxed opacity-0 animate-fade-in-up delay-100">
+          Stress-free cleaning for your home in South London. We provide reliable, high-quality services designed to make your life easier.
+        </p>
+        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 opacity-0 animate-fade-in-up delay-200">
+          <a href="contact.html" class="bg-brand-blue text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-opacity-90 transition-all shadow-xl text-center">
+            Get a Free Quote
+          </a>
+          <a href="https://wa.me/447399649615" target="_blank" rel="noopener noreferrer"
+             class="bg-brand-green text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-opacity-90 transition-all shadow-xl flex items-center justify-center space-x-2">
+            <span>Book on WhatsApp</span>
+          </a>
+        </div>
+        
+        <div class="mt-12 flex items-center space-x-8 text-sm text-gray-400 opacity-0 animate-fade-in-up delay-300">
+          <div class="flex items-center space-x-2">
+            <i data-lucide="check-circle" class="text-brand-green w-5 h-5"></i>
+            <span>Fully Insured</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <i data-lucide="check-circle" class="text-brand-green w-5 h-5"></i>
+            <span>Vetted Staff</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <i data-lucide="check-circle" class="text-brand-green w-5 h-5"></i>
+            <span>100% Satisfaction</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Badges -->
+  <section class="py-12 bg-brand-light border-y border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 flex flex-wrap justify-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all">
+      <div class="flex items-center space-x-2 font-display font-bold text-xl">
+        <i data-lucide="shield" class="text-brand-blue w-6 h-6"></i> <span>RELIABLE</span>
+      </div>
+      <div class="flex items-center space-x-2 font-display font-bold text-xl">
+        <i data-lucide="check-circle" class="text-brand-green w-6 h-6"></i> <span>VERIFIED</span>
+      </div>
+      <div class="flex items-center space-x-2 font-display font-bold text-xl">
+        <i data-lucide="star" class="text-yellow-500 w-6 h-6"></i> <span>PROFESSIONAL</span>
+      </div>
+      <div class="flex items-center space-x-2 font-display font-bold text-xl">
+        <i data-lucide="clock" class="text-brand-blue w-6 h-6"></i> <span>PUNCTUAL</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Highlight -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-display font-bold mb-4">Our Core Services</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          We offer a range of professional cleaning services tailored to your specific needs.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Service 1 -->
+        <div class="service-card bg-brand-light p-8 rounded-3xl border border-gray-100 shadow-sm">
+          <div class="text-4xl mb-6">✨</div>
+          <h3 class="text-2xl font-display font-bold mb-4">Standard Cleaning</h3>
+          <p class="text-gray-600 mb-6">Regular maintenance for a consistently clean home.</p>
+          <a href="services.html" class="text-brand-blue font-bold hover:underline">Learn More →</a>
+        </div>
+        
+        <!-- Service 2 -->
+        <div class="service-card bg-brand-light p-8 rounded-3xl border border-gray-100 shadow-sm">
+          <div class="text-4xl mb-6">🧼</div>
+          <h3 class="text-2xl font-display font-bold mb-4">Deep Cleaning</h3>
+          <p class="text-gray-600 mb-6">Thorough top-to-bottom cleaning for every corner.</p>
+          <a href="services.html" class="text-brand-blue font-bold hover:underline">Learn More →</a>
+        </div>
+        
+        <!-- Service 3 -->
+        <div class="service-card bg-brand-light p-8 rounded-3xl border border-gray-100 shadow-sm">
+          <div class="text-4xl mb-6">🏠</div>
+          <h3 class="text-2xl font-display font-bold mb-4">End of Tenancy</h3>
+          <p class="text-gray-600 mb-6">Professional cleaning to ensure your deposit return.</p>
+          <a href="services.html" class="text-brand-blue font-bold hover:underline">Learn More →</a>
+        </div>
+      </div>
+      
+      <div class="mt-12 text-center">
+        <a href="services.html" class="inline-block border-2 border-brand-blue text-brand-blue px-8 py-3 rounded-full font-bold hover:bg-brand-blue hover:text-white transition-all">
+          View All Services
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-24 bg-brand-dark text-white overflow-hidden relative">
+    <div class="absolute top-0 right-0 w-1/3 h-full bg-brand-blue/10 skew-x-12 transform translate-x-20"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="text-4xl font-display font-bold mb-8">Why Choose Neat & Tidy UK?</h2>
+          <div class="space-y-8">
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-brand-green rounded-2xl flex items-center justify-center flex-shrink-0">
+                <i data-lucide="shield" class="text-white w-6 h-6"></i>
+              </div>
+              <div>
+                <h4 class="text-xl font-bold mb-2">Trust & Reliability</h4>
+                <p class="text-gray-400">Our cleaners are fully vetted, background-checked, and insured for your peace of mind.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-brand-blue rounded-2xl flex items-center justify-center flex-shrink-0">
+                <i data-lucide="star" class="text-white w-6 h-6"></i>
+              </div>
+              <div>
+                <h4 class="text-xl font-bold mb-2">Attention to Detail</h4>
+                <p class="text-gray-400">We don't just clean; we meticulousy care for your space as if it were our own.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-brand-green rounded-2xl flex items-center justify-center flex-shrink-0">
+                <i data-lucide="clock" class="text-white w-6 h-6"></i>
+              </div>
+              <div>
+                <h4 class="text-xl font-bold mb-2">Flexible Scheduling</h4>
+                <p class="text-gray-400">Book at a time that suits your busy lifestyle. We're here when you need us.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+               alt="Cleaning Professional" class="rounded-3xl shadow-2xl relative z-10"
+               referrerpolicy="no-referrer">
+          <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-brand-green rounded-3xl z-0"></div>
+          <div class="absolute -top-6 -right-6 w-32 h-32 border-4 border-brand-blue rounded-3xl z-0"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-24 bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-display font-bold mb-4">What Our Clients Say</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Don't just take our word for it. Here is what our happy customers in South London have to say about our services.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card bg-white p-8 rounded-3xl shadow-sm border border-gray-50 flex flex-col justify-between">
+          <div class="mb-6">
+            <div class="flex text-yellow-500 mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <p class="text-gray-600 italic">"Neat & Tidy UK transformed my flat. Their attention to detail is unmatched! I can finally enjoy my weekends without worrying about cleaning."</p>
+          </div>
+          <div class="flex items-center space-x-4">
+            <div class="w-12 h-12 bg-brand-blue/10 rounded-full flex items-center justify-center font-bold text-brand-blue flex-shrink-0">S</div>
+            <div>
+              <h4 class="font-bold text-brand-dark">Sarah J.</h4>
+              <p class="text-sm text-gray-400">Busy Professional</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card bg-white p-8 rounded-3xl shadow-sm border border-gray-50 flex flex-col justify-between">
+          <div class="mb-6">
+            <div class="flex text-yellow-500 mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <p class="text-gray-600 italic">"Reliable and professional. They handle all my end-of-tenancy cleans perfectly. My new tenants always comment on how spotless the place is."</p>
+          </div>
+          <div class="flex items-center space-x-4">
+            <div class="w-12 h-12 bg-brand-blue/10 rounded-full flex items-center justify-center font-bold text-brand-blue flex-shrink-0">D</div>
+            <div>
+              <h4 class="font-bold text-brand-dark">David M.</h4>
+              <p class="text-sm text-gray-400">Landlord</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card bg-white p-8 rounded-3xl shadow-sm border border-gray-50 flex flex-col justify-between">
+          <div class="mb-6">
+            <div class="flex text-yellow-500 mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <p class="text-gray-600 italic">"The best cleaning service in South London. Trustworthy and always on time. They are great with our pets too!"</p>
+          </div>
+          <div class="flex items-center space-x-4">
+            <div class="w-12 h-12 bg-brand-blue/10 rounded-full flex items-center justify-center font-bold text-brand-blue flex-shrink-0">E</div>
+            <div>
+              <h4 class="font-bold text-brand-dark">Emma W.</h4>
+              <p class="text-sm text-gray-400">Family of 4</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 4 -->
+        <div class="testimonial-card bg-white p-8 rounded-3xl shadow-sm border border-gray-50 flex flex-col justify-between">
+          <div class="mb-6">
+            <div class="flex text-yellow-500 mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <p class="text-gray-600 italic">"Essential for my business. They are quick, thorough, and very reliable for my quick turnarounds. Highly recommended for any host."</p>
+          </div>
+          <div class="flex items-center space-x-4">
+            <div class="w-12 h-12 bg-brand-blue/10 rounded-full flex items-center justify-center font-bold text-brand-blue flex-shrink-0">M</div>
+            <div>
+              <h4 class="font-bold text-brand-dark">Michael R.</h4>
+              <p class="text-sm text-gray-400">Airbnb Host</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 5 -->
+        <div class="testimonial-card bg-white p-8 rounded-3xl shadow-sm border border-gray-50 flex flex-col justify-between">
+          <div class="mb-6">
+            <div class="flex text-yellow-500 mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <p class="text-gray-600 italic">"I have tried many services, but Neat & Tidy is by far the best. The oven cleaning service was a game changer!"</p>
+          </div>
+          <div class="flex items-center space-x-4">
+            <div class="w-12 h-12 bg-brand-blue/10 rounded-full flex items-center justify-center font-bold text-brand-blue flex-shrink-0">S</div>
+            <div>
+              <h4 class="font-bold text-brand-dark">Sophie L.</h4>
+              <p class="text-sm text-gray-400">Homeowner</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 6 -->
+        <div class="testimonial-card bg-white p-8 rounded-3xl shadow-sm border border-gray-50 flex flex-col justify-between">
+          <div class="mb-6">
+            <div class="flex text-yellow-500 mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <p class="text-gray-600 italic">"Professional staff and excellent communication. They really listen to your specific needs and deliver every time."</p>
+          </div>
+          <div class="flex items-center space-x-4">
+            <div class="w-12 h-12 bg-brand-blue/10 rounded-full flex items-center justify-center font-bold text-brand-blue flex-shrink-0">J</div>
+            <div>
+              <h4 class="font-bold text-brand-dark">James T.</h4>
+              <p class="text-sm text-gray-400">Local Resident</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-brand-blue rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden shadow-2xl">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.4\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        <div class="relative z-10">
+          <h2 class="text-4xl md:text-5xl font-display font-bold mb-6">Ready for a Spotless Home?</h2>
+          <p class="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+            Join hundreds of happy families in South London. Limited slots available for this week!
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+            <a href="contact.html" class="bg-white text-brand-blue px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all shadow-lg">
+              Get a Free Quote
+            </a>
+            <a href="https://wa.me/447399649615" target="_blank" rel="noopener noreferrer"
+               class="bg-brand-green text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-opacity-90 transition-all shadow-lg flex items-center justify-center space-x-2">
+              <i data-lucide="message-circle" class="w-6 h-6"></i>
+              <span>Book via WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-brand-dark text-white pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <!-- Brand Column -->
+        <div class="space-y-6">
+          <a href="index.html" class="flex items-center space-x-2">
+            <div class="w-10 h-10 bg-brand-blue rounded-lg flex items-center justify-center">
+              <span class="text-white font-display font-bold text-xl">N</span>
+            </div>
+            <span class="font-display font-bold text-xl text-white">
+              Neat & Tidy <span class="text-brand-green">UK</span>
+            </span>
+          </a>
+          <p class="text-gray-400 leading-relaxed">
+            Premium residential cleaning services in South London. We make your home shine so you can focus on what matters most.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-brand-blue transition-colors">
+              <i data-lucide="facebook" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-brand-blue transition-colors">
+              <i data-lucide="instagram" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-brand-blue transition-colors">
+              <i data-lucide="twitter" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="font-display font-bold text-lg mb-6">Quick Links</h3>
+          <ul class="space-y-4 text-gray-400">
+            <li><a href="index.html" class="hover:text-brand-green transition-colors">Home</a></li>
+            <li><a href="about.html" class="hover:text-brand-green transition-colors">About Us</a></li>
+            <li><a href="services.html" class="hover:text-brand-green transition-colors">Our Services</a></li>
+            <li><a href="pricing.html" class="hover:text-brand-green transition-colors">Pricing</a></li>
+            <li><a href="areas.html" class="hover:text-brand-green transition-colors">Areas Covered</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h3 class="font-display font-bold text-lg mb-6">Services</h3>
+          <ul class="space-y-4 text-gray-400">
+            <li><a href="services.html" class="hover:text-brand-green transition-colors">Standard Cleaning</a></li>
+            <li><a href="services.html" class="hover:text-brand-green transition-colors">Deep Cleaning</a></li>
+            <li><a href="services.html" class="hover:text-brand-green transition-colors">Oven Cleaning</a></li>
+            <li><a href="services.html" class="hover:text-brand-green transition-colors">Window Cleaning</a></li>
+            <li><a href="services.html" class="hover:text-brand-green transition-colors">Laundry Services</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h3 class="font-display font-bold text-lg mb-6">Contact Us</h3>
+          <ul class="space-y-4 text-gray-400">
+            <li class="flex items-start space-x-3">
+              <i data-lucide="map-pin" class="text-brand-green mt-1 flex-shrink-0 w-5 h-5"></i>
+              <span>South London & Surrounding Areas</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <i data-lucide="phone" class="text-brand-green flex-shrink-0 w-5 h-5"></i>
+              <span>+44 7399 649615</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <i data-lucide="mail" class="text-brand-green flex-shrink-0 w-5 h-5"></i>
+              <span>neatandtidyu@gmail.com</span>
+            </li>
+            <li class="pt-2">
+              <a href="https://wa.me/447399649615" target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center space-x-2 text-brand-green font-bold hover:underline">
+                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                <span>Chat on WhatsApp</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+        <p>&copy; 2025 Neat & Tidy UK. All rights reserved.</p>
+        <div class="flex space-x-6 mt-4 md:mt-0">
+          <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/447399649615" target="_blank" rel="noopener noreferrer"
+     class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl flex items-center justify-center group overflow-hidden hover:scale-110 transition-transform">
+    <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity"></div>
+    <i data-lucide="message-circle" class="w-8 h-8"></i>
+    <span class="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-300 font-bold whitespace-nowrap">
+      Book on WhatsApp
+    </span>
+  </a>
+
+  <!-- Scripts -->
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+    
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const navText = document.querySelector('.nav-text');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        navbar.classList.add('bg-white', 'shadow-md', 'py-2');
+        navbar.classList.remove('bg-transparent', 'py-4');
+        navLinks.forEach(link => {
+          link.classList.remove('text-white');
+          link.classList.add('text-brand-dark');
+        });
+        navText.classList.remove('text-white');
+        navText.classList.add('text-brand-dark');
+      } else {
+        navbar.classList.remove('bg-white', 'shadow-md', 'py-2');
+        navbar.classList.add('bg-transparent', 'py-4');
+        navLinks.forEach(link => {
+          link.classList.add('text-white');
+          link.classList.remove('text-brand-dark');
+        });
+        navText.classList.add('text-white');
+        navText.classList.remove('text-brand-dark');
+      }
+    });
+    
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
